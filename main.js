@@ -31,23 +31,18 @@ const operate = (arr) => {
   // First we check for the division and multiplication operators in the expression
   // and proceed to use the basic operation functions defined above once found.
   while (arr.includes("*") || arr.includes("/")) {
-    console.log(arr);
-
-    if (arr[i] === "/" || arr[i] === "*") {
-      switch (arr[i]) {
-        case "*":
-          result = multiply(+arr[i - 1], +arr[i + 1]);
-          arr.splice(i - 1, 3, result);
-          i = -1;
-          break;
-        case "/":
-          result = divide(+arr[i - 1], +arr[i + 1]);
-          arr.splice(i - 1, 3, result);
-          i = -1;
-          break;
-      }
+    switch (arr[i]) {
+      case "*":
+        result = multiply(+arr[i - 1], +arr[i + 1]);
+        arr.splice(i - 1, 3, result);
+        i = -1;
+        break;
+      case "/":
+        result = divide(+arr[i - 1], +arr[i + 1]);
+        arr.splice(i - 1, 3, result);
+        i = -1;
+        break;
     }
-
     i += 2;
   }
 
@@ -56,19 +51,17 @@ const operate = (arr) => {
   // Lastly we check for the addition and subtraction operators in the expression
   // and proceed to use the basic operation functions defined above once found.
   while (arr.includes("-") || arr.includes("+")) {
-    if (arr[i] === "+" || arr[i] === "-") {
-      switch (arr[i]) {
-        case "+":
-          result = plus(+arr[i - 1], +arr[i + 1]);
-          arr.splice(i - 1, 3, result);
-          i = -1;
-          break;
-        case "-":
-          result = subtract(+arr[i - 1], +arr[i + 1]);
-          arr.splice(i - 1, 3, result);
-          i = -1;
-          break;
-      }
+    switch (arr[i]) {
+      case "+":
+        result = plus(+arr[i - 1], +arr[i + 1]);
+        arr.splice(i - 1, 3, result);
+        i = -1;
+        break;
+      case "-":
+        result = subtract(+arr[i - 1], +arr[i + 1]);
+        arr.splice(i - 1, 3, result);
+        i = -1;
+        break;
     }
     i += 2;
   }
