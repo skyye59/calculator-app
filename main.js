@@ -3,11 +3,7 @@ let operations = document.querySelector(".operations");
 let result = document.querySelector(".result");
 let evaluate = document.querySelector("button[data='='");
 
-console.log(evaluate);
-let numbers = [];
-
 // Basic operations for a standard calculator.
-
 const plus = (a, b) => {
   return a + b;
 };
@@ -91,6 +87,8 @@ const updateOperationState = (operation, value) => {
     operation.innerText += `${value}`;
   }
 };
+
+// Event Listeners for each button except the equal symbol.
 
 buttons.forEach((element) => {
   element.addEventListener("click", (e) => {
