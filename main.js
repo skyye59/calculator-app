@@ -66,7 +66,7 @@ const operate = (arr) => {
     i += 2;
   }
 
-  // Once all operations are done, we return the arr.
+  // Once all operations are done, we return the array.
   return arr;
 };
 
